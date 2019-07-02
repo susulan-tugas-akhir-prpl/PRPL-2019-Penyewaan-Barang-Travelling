@@ -1,0 +1,87 @@
+
+
+
+.bg {
+    background: url(../img/desainprplui1REVISI.png);
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.bg2{
+    background: url(../img/desainprplui2.png);
+    position: absolute;
+    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.bg3{
+    background: url(../img/desainprplui2.png);
+    background-position: relative;
+}
+
+.bgadmin{
+    background: url(../img/bgadmin.png);
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+h1{
+	text-align: center;
+	/*ketebalan font*/
+	font-weight: 300;
+}
+
+.tulisan_login{
+	text-align: center;
+	/*membuat semua huruf menjadi kapital*/
+	text-transform: uppercase;
+}
+
+.kotak_login{
+	width: 350px;
+	background: transparent;
+	/*meletakkan form ke tengah*/
+	margin: 80px auto;
+	
+	padding: 30px 20px;
+}
+
+label{
+	font-size: 11pt;
+}
+
+.form_login{
+	/*membuat lebar form penuh*/
+	box-sizing : border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+}
+
+.tombol_login{
+	background: #46de4b;
+	color: white;
+	font-size: 11pt;
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 20px;
+}
+
+.link{
+	color: #232323;
+	text-decoration: none;
+	font-size: 10pt;
+}

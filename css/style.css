@@ -1,0 +1,270 @@
+body {
+    background: #f5f5f5;
+}
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+#kepala1 {
+    background: #fff !important;
+}
+
+.bismillah {
+    background: transparent;
+}
+
+.alhamdulillah {
+    margin-top: -100px;
+    background-image: url(desainprplui1REVISI.png);
+    height: 768px;
+    background-position: cover;
+}
+
+.alhamdulillah2 {
+    background-image: url(desainprplui2.png);
+    height: 768px;
+    background-position: cover;
+}
+
+.button {
+    position: absolute;
+    top: 370px;
+    right: 970px;
+    width: 200px;
+    height: 100px;
+}
+
+.buttonnext {
+    position: absolute;
+    top: 570px;
+    right: 150px;
+    width: 200px;
+    height: 100px;
+}
+
+.buttonback {
+    position: absolute;
+    top: 400px;
+    right: 900px;
+    width: 200px;
+    height: 100px;
+}
+
+.container {
+    background: white;
+    margin: 20px auto;
+    padding: 13px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+}
+
+.notfound {
+    background-color: aqua;
+    position: absolute;
+    top: 300px;
+    right: 900px;
+    width: 200px;
+    height: 100px;
+    font-family: "Warung Kopi", serif;
+}
+
+.thumbnail {
+    max-width: 100%;
+    max-height: 200px;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.containerform {
+    position: absolute;
+    top: 100px;
+    right: 620px;
+    width: 200px;
+    height: 100px;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    font-size: 10pt;
+}
+
+.product {
+    margin: 10px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+}
+
+.imgbutton {
+    width: 30px;
+    height: 30px;
+}
+
+.remember {
+    background-color: aqua;
+    position: absolute;
+    top: 300px;
+    right: 900px;
+    width: 200px;
+    height: 100px;
+    font-family: "Warung Kopi", serif;
+}
+
+h2 {
+    color: #4311CF;
+}
+
+table,
+th,
+td {
+    border: 1px solid #dfdfdf;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+#saveimg {
+    width: 20px;
+    height: 20px;
+}
+
+table tr td input {
+    width: 40px;
+}
+
+.tulisan_login {
+    text-align: center;
+    /*membuat semua huruf menjadi kapital*/
+    text-transform: uppercase;
+}
+
+.posisi_login {
+    position: absolute;
+    top: 100px;
+    right: 620px;
+    width: 200px;
+    height: 100px;
+    width: 300px;
+}
+
+.kotak_login {
+    width: 300px;
+    background: aqua;
+    /*meletakkan form ke tengah*/
+
+    margin: 40px auto;
+    padding: 30px 20px;
+}
+
+label {
+    font-size: 11pt;
+}
+
+.form_login {
+    /*membuat lebar form penuh*/
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 11pt;
+    margin-bottom: 20px;
+}
+
+.tombol_login {
+    background: #46de4b;
+    color: white;
+    font-size: 11pt;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.link {
+    color: #232323;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+.logo_input {
+    position: absolute;
+    top: 250px;
+    right: 800px;
+    width: 200px;
+    height: 100px;
+}
+
+.input_admin {
+    position: absolute;
+    top: 275px;
+    right: 830px;
+    width: 200px;
+    height: 100px;
+}
+
+.logo_lihat {
+    position: absolute;
+    top: 250px;
+    right: 500px;
+    width: 200px;
+    height: 100px;
+}
+
+.lihat_admin {
+    position: absolute;
+    top: 275px;
+    right: 530px;
+    width: 200px;
+    height: 100px;
+}
+
+.tulisan {
+    font-family: sans-serif;
+    font-size: 40px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    /* right: 530px;
+    width: 200px;
+    height: 100px; */
+}

@@ -1,4 +1,5 @@
 <?php
+include 'support.php';
 session_start();
 ?>
 
@@ -9,41 +10,57 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="../js/script.js"></script>
+
     <title>Edit Produk</title>
-    <div>
-        <nav>
-            <a href="../index.php">Mlaku.co</a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="../pencariandatapesan.php">Search Order</a>
+    <div id="kepala1" class="shadow-sm py-1 sticky-top ">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand a" href="index.php">Mlaku.co</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse sticky" id="navbarSupportedContent">
+
+                <ul class="navbar-nav mr-auto pl-2">
+                    <!-- <li class="nav-item active">
+                        <a class="nav-link" href="tambahproduk.php">Tambah Barang <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="view.php">Lihat Barang <span class="sr-only">(current)</span></a>
                     </li>
-                    <li>
-                        <a href="#">
-                        Categories
-                        </a>
-                    <div> <!-- dropdown -->
-                        <a href="../categories/alatkemah.php">Alat Kemah</a>
-                        <a href="../categories/alathiking.php">Alat Hiking</a>
-                        <a href="../categories/pakaiantravelling.php">Pakaian Travelling</a>
-                    </div>
-                    </li>
-                    <li>
-                        <a href="../about.php">About Us</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="lihatpesanan.php">Lihat Daftar Pemesanan <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <!-- copas ini pak -->
-                <a href="../login.php">Sign in for Admin</a>
-                <form method="GET" action="pencarian.php">
-                    <input type="text" name="search" onkeyup="this.value = this.value.toLowerCase();"> 
-                </form>
+                <div class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../img/admin.png" alt="" style="height:30;">&nbsp;
+                        ADMIN
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="logout.php">Log Out</a>
+                    </div>
+                </div>
+
+                <!-- <form class="form-inline my-2 my-lg-0" method="GET" action="pencarian.php"> -->
+                <!-- <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search" onkeyup="this.value = this.value.toLowerCase();">  -->
+                <!--      <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>-->
+
+                <!-- </form> -->
                 <!-- sampai sini, ganti aja yang sebelumnya. -->
             </div>
         </nav>
     </div>
 </head>
 
-<body>
+<body class="bg2">
     <hr>
     <h3>Edit Barang</h3>
     <hr>
@@ -66,10 +83,10 @@ session_start();
             <input type='text' value='<?= $data['nama_bar'] ?>' placeholder='Masukkan Nama Barang' name='nabar' required> <br>
 
             Kategori Barang:
-            <div>
+            <div class="form-group">
                 <!-- <label for="nambar">Kategori Barang</label> -->
                 <!-- <input type="select" class="form-control" name="namaproduk"  placeholder="Pilih Kategori Barang" required> -->
-                <select name="kategori" placeholder="Pilih Kategori Barang" required>
+                <select class="form-control" name="kategori" placeholder="Pilih Kategori Barang" required>
                     <option value="hiking">Alat Hiking</option>
                     <option value="kemah">Alat Kemah</option>
                     <option value="pakaian">Pakaian Traveling</option>

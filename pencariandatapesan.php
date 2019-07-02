@@ -1,5 +1,7 @@
 <?php
   include 'dbconnect.php';
+  include 'support.php';
+
 ?>
 
 <html lang="en">
@@ -8,46 +10,66 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+
+    <script type="text/javascript" src="js/script.js"></script>
+
     <title>Pencarian Data Pemesanan</title>
-    <div>
-        <nav>
-            <a href="index.php">Mlaku.co</a>
-            <div>
-                <ul>
-                    <li>
-                        <a href="pencariandatapesan.php">Search Order</a>
+    <div id="kepala1" class="shadow-sm py-1 sticky-top " >
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand a" href="index.php">Mlaku.co</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse sticky" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto pl-2">
+                    <!-- <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    <li class="nav-item">
+                            <a class="nav-link" href="pencariandatapesan.php">Search Order</a>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categories
                         </a>
-                    <div> <!-- dropdown -->
-                        <a href="./categories/alatkemah.php">Alat Kemah</a>
-                        <a href="./categories/alathiking.php">Alat Hiking</a>
-                        <a href="./categories/pakaiantravelling.php">Pakaian Travelling</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="categories/alatkemah.php">Alat Kemah</a>
+                        <a class="dropdown-item" href="categories/alathiking.php">Alat Hiking</a>
+                        <a class="dropdown-item" href="categories/pakaiantravelling.php">Pakaian Travelling</a>
                     </div>
                     </li>
-                    <li>
-                        <a href="about.php">About Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.php">About Us</a>
                     </li>
                 </ul>
                 <!-- copas ini pak -->
-                <a href="login.php">Sign in for Admin</a>
-                <form method="GET" action="pencarian.php">
-                    <input type="text" name="search" onkeyup="this.value = this.value.toLowerCase();">    
+                <a class="nav-link my-2 my-lg-0 ml-5" href="login.php">Sign in for Admin</a>
+                <form class="form-inline my-2 my-lg-0" method="GET" action="pencarian.php">
+                    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search" onkeyup="this.value = this.value.toLowerCase();"> 
+            <!--      <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Search</button>-->
+                
                 </form>
                 <!-- sampai sini, ganti aja yang sebelumnya. -->
             </div>
         </nav>
     </div>
 </head>
-<body>
+<body class="bg2">
 
-    <div>
+    <div class="container" >
         <form action="" method="get">
+            <div class="py-1 pl-3 mt-3">
             Masukkan Nomor Pemesanan:
             <input type="text" name="no_pes" required oninvalid="this.setCustomValidity('Nomor pemesanan wajib diisi!')" oninput="setCustomValidity('')">
-            <input type="submit" name="submit" value="Cari">
+
+            <input type="submit" class="btn-small btn-primary mx-2" name="submit" value="Cari">
+            </div>
         </form>
     </div>
 
@@ -61,93 +83,124 @@
                     )->fetch_object();
     ?>
 
-        <div>
-            <div>
-                <div>                               
-                    <center>
-                        Nomor Pemesanan: <b style="font-size:20px"><?= $query->nopes ?></b>
-                        <br><br>
-                        Tanggal Pesan: <b><?php 
-                            $newtgl=date("d-m-Y", strtotime($query->tglpsn));
-                            echo $newtgl
-                        ?></b>
-                    </center>
-                    <!-- <br><br> -->
-              
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col product">                
                     <br>
-                    <div>
-                        <center>
-                            <p>E-Mail: <br><b><?php echo $query->email ?></b></p>
-                            
-                            <p>Nama Lengkap: <br><b><?php echo $query->napel ?></b></p>
+                    <div class="card" style="width: 20rem;">
+                        <div class="card body px-3 py-3">
+                            <center>
+                                Nomor Pemesanan: <b style="font-size:20px"><?= $query->nopes ?></b>
+                                <br><br>
+                                Tanggal Pesan: <b><?php 
+                                    $newtgl=date("d-m-Y", strtotime($query->tglpsn));
+                                    echo $newtgl
+                                ?></b>
+                            </center>
+                            <!-- <br><br> -->
+                        </div>
+                    </div>
+                                
+                    <br>
+                    <div class="card" style="width: 20rem;">
+                        <div class="card body px-3 py-3">
+                            <center>
+                                <p>E-Mail: <br><b><?php echo $query->email ?></b></p>
+                                
+                                <p>Nama Lengkap: <br><b><?php echo $query->napel ?></b></p>
 
-                            <lp>ID Pelanggan (KTP/SIM): </br><b><?php echo $query->idpel ?></b>
-                        </center>
-                    </div>                    
+                                <lp>ID Pelanggan (KTP/SIM): </br><b><?php echo $query->idpel ?></b>
+                            </center>
+                            <!-- <br><br> -->
+                        </div>
+                    </div>
+                    
                 </div>
                 
-                <div>                
+                <div class="col product">                
                     <br>
-                    <p>Barang yang dipesan:</p>
-                    <center>
-                        <table id="t01">
-                            <tr style="font-size:14px">
-                                <th>Nama Barang</th>
-                                <th>Harga</th>
-                                <th>Kuantitas</th> 
-                                <th>Jumlah</th>
-                            </tr>
+                    <div class="card" style="width: 25rem;">
+                        <div class="card body px-3 py-3">
+                            <p>Barang yang dipesan:</p>
+                            <center>
+                                <table id="t01">
+                                    <tr style="font-size:14px">
+                                        <th>Nama Barang</th>
+                                        <th>Harga</th>
+                                        <th>Kuantitas</th> 
+                                        <th>Jumlah</th>
+                                    </tr>
+
+                                    <?php 
+                                         $sql = mysqli_query($konek,
+                                                    "SELECT i.nama_bar as 'namabar', pp.harga as 'harga', pp.kuantitas as 'kuantitas' 
+                                                        FROM itemproduk i, produkpemesanan pp 
+                                                        WHERE pp.id_bar = i.id_bar AND pp.nomor_pemesanan LIKE '$nopes'"
+                                                 ); 
+                                        // $cart = unserialize(serialize($_SESSION['cart']));
+                                        // $s = 0;
+                                        // $index = 0;
+                                        // for($i=0; $i<count($cart); $i++){
+                                            // $s += $cart[$i]->price * $cart[$i]->quantity;
+                                            $s=0;
+                                            while($query2 = mysqli_fetch_object($sql)){
+                                    ?>
+
+                                    <tr style="font-size:13px">
+                                            <td> <?php echo $query2->namabar; ?> </td>
+                                            <td> Rp<?php echo number_format($query2->harga); ?>,- </td>
+                                            <td> <center> <?php echo $query2->kuantitas; ?></center> </td> 
+                                            <?php $subtot=$query2->harga * $query2->kuantitas; 
+                                                 $s+=$subtot;
+                                            ?>
+                                            <td> Rp<?php echo number_format($subtot); ?>,- </td> 
+                                           
+                                    </tr>
+                                            <?php } ?>
+                                    <tr style="font-size:14px">
+                                        <td colspan="3" style="text-align:center; font-weight:bold">Subtotal
+                                        </td>
+                                        <td> <b>Rp<?php echo number_format($s); ?>,-<b> </td>
+                                    </tr>
+                                </table>
+                            </center>
+                            <br>
 
                             <?php 
-                                    $sql = mysqli_query($konek,
-                                            "SELECT i.nama_bar as 'namabar', pp.harga as 'harga', pp.kuantitas as 'kuantitas' 
-                                                FROM itemproduk i, produkpemesanan pp 
-                                                WHERE pp.id_bar = i.id_bar AND pp.nomor_pemesanan LIKE '$nopes'"
-                                            ); 
-                                // $cart = unserialize(serialize($_SESSION['cart']));
-                                // $s = 0;
-                                // $index = 0;
-                                // for($i=0; $i<count($cart); $i++){
-                                    // $s += $cart[$i]->price * $cart[$i]->quantity;
-                                    $s=0;
-                                    while($query2 = mysqli_fetch_object($sql)){
+                                if(isset($_GET["id"]) || isset($_GET["index"])){
+                                //  header('Location: cart.php');
+                                } 
                             ?>
 
-                            <tr style="font-size:13px">
-                                    <td> <?php echo $query2->namabar; ?> </td>
-                                    <td> Rp<?php echo number_format($query2->harga); ?>,- </td>
-                                    <td> <center> <?php echo $query2->kuantitas; ?></center> </td> 
-                                    <?php $subtot=$query2->harga * $query2->kuantitas; 
-                                            $s+=$subtot;
-                                    ?>
-                                    <td> Rp<?php echo number_format($subtot); ?>,- </td> 
-                                    
-                            </tr>
-                                    <?php } ?>
-                            <tr style="font-size:14px">
-                                <td colspan="3" style="font-weight:bold">Subtotal
-                                </td>
-                                <td> <b>Rp<?php echo number_format($s); ?>,-<b> </td>
-                            </tr>
-                        </table>
-                    </center>
-                    <br>
-                </div>
-                <div>                
-                    <br>
-                    <center>
-                        <p>Lama Penyewaan: <br><b><?php echo $query->lamasewa ?> hari</b>
                         
-                        <?php //$totalbayar = $s * $query->lamasewa ?>
-                        <p>Total Pembayaran: <br><b style="font-size:20px">Rp<?php echo number_format($query->totalharga) ?>,-</b>
-                    </center>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col product">                
                     <br>
-                    <p style="text-align: justify; font-size: 13px">Bila ada kesalahan data hasil inputan pelanggan, dapat menghubungi kontak Admin yang ada di halaman About Us.
+                    <div class="card" style="width: 15rem;">
+                        <div class="card body px-3 py-3">
+                            <center>
+                                <p>Lama Penyewaan: <br><b><?php echo $query->lamasewa ?> hari</b>
+                                
+                                <?php //$totalbayar = $s * $query->lamasewa ?>
+                                <p>Total Pembayaran: <br><b style="font-size:20px">Rp<?php echo number_format($query->totalharga) ?>,-</b>
+                            </center>
+                        </div>
+                    </div>
+                    <br>
+                    <p style="text-align: justify; width:15rem; font-size: 13px">Bila ada kesalahan data hasil inputan pelanggan, dapat menghubungi kontak Admin yang ada di halaman About Us.
                     <b>(Harap mencantumkan nomor pesanan beserta data yang salah atau mengirim hasil Screenshot halaman ini).</b></p>
                 </div>
 
             </div>
-            <br>       
+        <!-- </div> -->
+
+            
+            
+            <br>
+            
         </div>
 
     <?php
